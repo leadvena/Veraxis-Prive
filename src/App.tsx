@@ -425,80 +425,92 @@ const Home = () => {
 
 const MENU_DATA = [
   {
-    category: "PRESTIGE GROOMING LOUNGE",
+    categoryEn: "PRESTIGE GROOMING LOUNGE",
+    categoryAr: "صالة الحلاقة الفاخرة",
+    subtitle: "Where Style Meets Excellence",
     items: [
-      { name: "Shaving | حلاقة لحية", duration: "15–20 min", price: "50 AED", desc: "Where Style Meets Excellence." },
-      { name: "Hair Cut | حلاقة شعر", duration: "20–30 min", price: "50 AED", desc: "Precision cut tailored to your style." },
-      { name: "Hair Styling | تسريحة للشعر", duration: "15–25 min", price: "50 AED", desc: "Expert styling for a refined look." },
-      { name: "Eyebrow Grooming | ترتيب الحواجب", duration: "10–15 min", price: "50 AED", desc: "Meticulous trimming and shaping." },
-      { name: "Cover Baldness with Styling | تغطية الصلع وترتيب الشعر", duration: "20–30 min", price: "75 AED", desc: "Specialized styling techniques." },
-      { name: "Hair Hanna | حنة للشعر", duration: "45–60 min", price: "75 AED", desc: "Natural hair coloring and treatment." },
-      { name: "Hot Oil | حمام زيت ساخن", duration: "30–40 min", price: "75 AED", desc: "Deep nourishment for hair health." },
-      { name: "Beard Hanna | حنة للحية", duration: "30–45 min", price: "75 AED", desc: "Natural beard coloring and care." },
-      { name: "Wax | واكس", duration: "10–20 min", price: "20–120 AED", desc: "Targeted facial waxing." },
-      { name: "Hair Botox | بوتكس شعر", duration: "60–90 min", price: "300 AED", desc: "Deep restorative treatment for hair revitalization." },
-      { name: "Keratin Hair Treatment | علاج كيراتين للشعر", duration: "90–120 min", price: "700 AED", desc: "Advanced smoothing for hair health and control." }
+      { en: "Shaving", ar: "حلاقة لحية", duration: "15–20 min", price: "50 AED" },
+      { en: "Hair Cut", ar: "حلاقة شعر", duration: "20–30 min", price: "50 AED" },
+      { en: "Hair Styling", ar: "تسريحة للشعر", duration: "15–25 min", price: "50 AED" },
+      { en: "Eyebrow Grooming", ar: "ترتيب الحواجب", duration: "10–15 min", price: "50 AED" },
+      { en: "Cover Baldness with Styling", ar: "تغطية الصلع وترتيب الشعر", duration: "20–30 min", price: "75 AED" },
+      { en: "Hair Hanna", ar: "حنة للشعر", duration: "45–60 min", price: "75 AED" },
+      { en: "Hot Oil", ar: "حمام زيت ساخن", duration: "30–40 min", price: "75 AED" },
+      { en: "Beard Hanna", ar: "حنة للحية", duration: "30–45 min", price: "75 AED" },
+      { en: "Wax", ar: "واكس", duration: "10–20 min", price: "20–120 AED" },
+      { en: "Hair Botox", ar: "بوتكس شعر", duration: "60–90 min", price: "300 AED" },
+      { en: "Keratin Hair Treatment", ar: "علاج كيراتين للشعر", duration: "90–120 min", price: "700 AED" }
     ]
   },
   {
-    category: "PRECISION HAIR REMOVAL & WAXING",
+    categoryEn: "PRECISION HAIR REMOVAL & WAXING",
+    categoryAr: "إزالة الشعر واكس",
+    subtitle: "Expert Care • Smooth Results",
     items: [
-      { name: "Under Arm | إزالة شعر الإبطين", duration: "10–15 min", price: "50 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Shoulder | الكتفين", duration: "10–20 min", price: "50 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Half Arm | نصف الذراعين", duration: "15–25 min", price: "50 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Full Arm | كامل الذراعين", duration: "25–40 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Half Legs | نصف الساقين", duration: "20–35 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Chest and Stomach | الصدر والبطن", duration: "20–40 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Full Back & Shoulder | كامل الظهر والكتفين", duration: "30–50 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Bikini | بيكيني", duration: "15–25 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Full Legs | كامل الساقين", duration: "40–60 min", price: "200 AED", desc: "Expert Care • Smooth Results" },
-      { name: "Full Body | الجسم كامل", duration: "90–120 min", price: "400 AED", desc: "Expert Care • Smooth Results" }
+      { en: "Under Arm", ar: "إزالة شعر الإبطين", duration: "10–15 min", price: "50 AED" },
+      { en: "Shoulder", ar: "الكتفين", duration: "10–20 min", price: "50 AED" },
+      { en: "Half Arm", ar: "نصف الذراعين", duration: "15–25 min", price: "50 AED" },
+      { en: "Full Arm", ar: "كامل الذراعين", duration: "25–40 min", price: "100 AED" },
+      { en: "Half Legs", ar: "نصف الساقين", duration: "20–35 min", price: "100 AED" },
+      { en: "Chest and Stomach", ar: "الصدر والبطن", duration: "20–40 min", price: "100 AED" },
+      { en: "Full Back & Shoulder", ar: "كامل الظهر والكتفين", duration: "30–50 min", price: "100 AED" },
+      { en: "Bikini", ar: "بيكيني", duration: "15–25 min", price: "100 AED" },
+      { en: "Full Legs", ar: "كامل الساقين", duration: "40–60 min", price: "200 AED" },
+      { en: "Full Body", ar: "الجسم كامل", duration: "90–120 min", price: "400 AED" }
     ]
   },
   {
-    category: "VÉRAXIS PRIVÉ FACIAL COLLECTION",
+    categoryEn: "VÉRAXIS PRIVÉ FACIAL COLLECTION",
+    categoryAr: "التجميل وتنظيف البشرة",
+    subtitle: "Refresh Your Skin, Reveal Your Glow",
     items: [
-      { name: "Express Executive Facial | فيشل سريع للعملاء المشغولين", duration: "", price: "199 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
-      { name: "Royal Glow Facial | تنظيف عميق + توهج فوري", duration: "", price: "299 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
-      { name: "Aqua Luxe Hydration Ritual | ترطيب مكثف + علاج تحجيم البشرة", duration: "", price: "399 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
-      { name: "Bright Aura Skin Ritual | تفتيح + تصحيح التصبغات", duration: "", price: "449 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
-      { name: "Age Reverse Therapy | شد + مكافحة الشيخوخة + مساج رفع", duration: "", price: "599 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
-      { name: "24K Gold Signature Facial | علاج توهج فاخر بالذهب", duration: "", price: "799 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
-      { name: "Platinum Skin Renewal | تجديد متقدم + منتجات فاخرة", duration: "", price: "999 AED", desc: "Refresh Your Skin, Reveal Your Glow" }
+      { en: "Express Executive Facial", ar: "فيشل سريع للعملاء المشغولين", duration: "", price: "199 AED" },
+      { en: "Royal Glow Facial", ar: "تنظيف عميق + توهج فوري", duration: "", price: "299 AED" },
+      { en: "Aqua Luxe Hydration Ritual", ar: "ترطيب مكثف + علاج تحجيم البشرة", duration: "", price: "399 AED" },
+      { en: "Bright Aura Skin Ritual", ar: "تفتيح + تصحيح التصبغات", duration: "", price: "449 AED" },
+      { en: "Age Reverse Therapy", ar: "شد + مكافحة الشيخوخة + مساج رفع", duration: "", price: "599 AED" },
+      { en: "24K Gold Signature Facial", ar: "علاج توهج فاخر بالذهب", duration: "", price: "799 AED" },
+      { en: "Platinum Skin Renewal", ar: "تجديد متقدم + منتجات فاخرة", duration: "", price: "999 AED" }
     ]
   },
   {
-    category: "LUXURY HAND & FOOT CARE RITUAL",
+    categoryEn: "LUXURY HAND & FOOT CARE RITUAL",
+    categoryAr: "علاج اليدين والقدمين",
+    subtitle: "Soft Touch • Smooth Finish • Perfect Grooming",
     items: [
-      { name: "Manicure | تقليم أظافر اليدين", duration: "30–45 min", price: "70 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
-      { name: "Pedicure | تقليم أظافر القدمين", duration: "40–60 min", price: "70 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
-      { name: "Foot Spa | تنظيف القدمين", duration: "20–30 min", price: "70 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
-      { name: "Manicure & Hand Care Ritual | تقليم أظافر ومساج اليدين", duration: "45–60 min", price: "100 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
-      { name: "Pedicure & Foot Care Ritual | تقليم أظافر ومساج القدمين", duration: "60–75 min", price: "100 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
-      { name: "Foot Spa & Massage | تنظيف ومساج القدم", duration: "40–50 min", price: "100 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" }
+      { en: "Manicure", ar: "تقليم أظافر اليدين", duration: "30–45 min", price: "70 AED" },
+      { en: "Pedicure", ar: "تقليم أظافر القدمين", duration: "40–60 min", price: "70 AED" },
+      { en: "Foot Spa", ar: "تنظيف القدمين", duration: "20–30 min", price: "70 AED" },
+      { en: "Manicure & Hand Care Ritual", ar: "تقليم أظافر ومساج اليدين", duration: "45–60 min", price: "100 AED" },
+      { en: "Pedicure & Foot Care Ritual", ar: "تقليم أظافر ومساج القدمين", duration: "60–75 min", price: "100 AED" },
+      { en: "Foot Spa & Massage", ar: "تنظيف ومساج القدم", duration: "40–50 min", price: "100 AED" }
     ]
   },
   {
-    category: "OASIS BATH & SCRUB LOUNGE",
+    categoryEn: "OASIS BATH & SCRUB LOUNGE",
+    categoryAr: "الحمام الشرقي وسكربات",
+    subtitle: "Indulge in Pure Relaxation",
     items: [
-      { name: "Whitening Scrub | سكراب تبييض", duration: "45–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
-      { name: "Slimming Scrub | اسكرب تخسيس", duration: "45–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
-      { name: "Regular / Traditional Bath | الحمام التقليدي", duration: "40–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
-      { name: "Detox Scrub (Lymphatic Drainage) | سكراب ديتوكس", duration: "45–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
-      { name: "Veraxis Premium Majestic Bath | حمام ذا ون الخاص", duration: "75–90 min", price: "300 AED", desc: "Indulge in Pure Relaxation" },
-      { name: "Emirati Bath | الحمام الإماراتي", duration: "15–25 min", price: "350 AED", desc: "Indulge in Pure Relaxation" },
-      { name: "Bath with Musk | حمام المسك", duration: "45–60 min", price: "450 AED", desc: "Indulge in Pure Relaxation" },
-      { name: "Bath with Oud | حمام العود", duration: "45–60 min", price: "550 AED", desc: "Indulge in Pure Relaxation" }
+      { en: "Whitening Scrub", ar: "سكراب تبييض", duration: "45–60 min", price: "200 AED" },
+      { en: "Slimming Scrub", ar: "اسكرب تخسيس", duration: "45–60 min", price: "200 AED" },
+      { en: "Regular / Traditional Bath", ar: "الحمام التقليدي", duration: "40–60 min", price: "200 AED" },
+      { en: "Detox Scrub (Lymphatic Drainage)", ar: "سكراب ديتوكس (إزالة للسموم)", duration: "45–60 min", price: "200 AED" },
+      { en: "Veraxis Premium Majestic Bath", ar: "حمام ذا ون الخاص", duration: "75–90 min", price: "300 AED" },
+      { en: "Emirati Bath", ar: "الحمام الإماراتي", duration: "15–25 min", price: "350 AED" },
+      { en: "Bath with Musk", ar: "حمام المسك", duration: "45–60 min", price: "450 AED" },
+      { en: "Bath with Oud", ar: "حمام العود", duration: "45–60 min", price: "550 AED" }
     ]
   },
   {
-    category: "VÉRAXIS PRIVÉ MEN'S WELLNESS LOUNGE",
+    categoryEn: "VÉRAXIS PRIVÉ MEN'S WELLNESS LOUNGE",
+    categoryAr: "صالة العناية بالرجل",
+    subtitle: "Where Personal Care Becomes a Ritual",
     items: [
-      { name: "Swedish Personal Care Ritual | ريلاكس سويدي", duration: "60 / 90 MIN", price: "200 / 300 AED", desc: "Where Personal Care Becomes a Ritual" },
-      { name: "Aroma Personal Care Ritual | ريلاكس بالزيوت العطرية", duration: "60 / 90 MIN", price: "200 / 300 AED", desc: "Where Personal Care Becomes a Ritual" },
-      { name: "Deep Relax Personal Care Ritual | ريلاكس عميق", duration: "60 / 90 MIN", price: "250 / 350 AED", desc: "Where Personal Care Becomes a Ritual" },
-      { name: "Stretch Personal Care Ritual | ريلاكس تمدد", duration: "60 / 90 MIN", price: "250 / 350 AED", desc: "Where Personal Care Becomes a Ritual" },
-      { name: "Hot Stone Personal Care Ritual | ريلاكس بالأحجار الساخنة", duration: "60 / 90 MIN", price: "300 / 400 AED", desc: "Where Personal Care Becomes a Ritual" }
+      { en: "Swedish Personal Care Ritual", ar: "ريلاكس سويدي", duration: "60 / 90 MIN", price: "200 / 300 AED" },
+      { en: "Aroma Personal Care Ritual", ar: "ريلاكس بالزيوت العطرية", duration: "60 / 90 MIN", price: "200 / 300 AED" },
+      { en: "Deep Relax Personal Care Ritual", ar: "ريلاكس عميق", duration: "60 / 90 MIN", price: "250 / 350 AED" },
+      { en: "Stretch Personal Care Ritual", ar: "ريلاكس تمدد", duration: "60 / 90 MIN", price: "250 / 350 AED" },
+      { en: "Hot Stone Personal Care Ritual", ar: "ريلاكس بالأحجار الساخنة", duration: "60 / 90 MIN", price: "300 / 400 AED" }
     ]
   }
 ];
@@ -514,25 +526,27 @@ const ServicesPage = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-40">
         {MENU_DATA.map((group, idx) => (
           <div key={idx} className="space-y-12">
-            <h2 className="text-accent text-[11px] uppercase tracking-[0.6em] font-black border-b border-white/10 pb-4">{group.category}</h2>
+            <div>
+              <h2 className="text-accent text-sm md:text-base tracking-[0.2em] font-black">{group.categoryEn} | {group.categoryAr}</h2>
+              <p className="text-white/50 text-sm italic mt-2 border-b border-white/10 pb-4">{group.subtitle}</p>
+            </div>
             <div className="space-y-10">
               {group.items.map((item, i) => (
                 <Link 
                   key={i} 
                   to="/booking" 
-                  state={{ service: item.name }}
+                  state={{ service: item.en }}
                   className="group block cursor-pointer"
                 >
                   <div className="flex justify-between items-baseline mb-4">
                     <h3 className="text-xl md:text-2xl text-white font-serif group-hover:text-accent transition-colors flex items-center gap-3">
-                      {item.name.split(' | ')[0]}
+                      {item.en} <span className="text-sm font-sans text-white/70 font-light ml-2">{item.ar}</span>
                       <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                     </h3>
                     <div className="flex-grow mx-6 border-b border-white/5 border-dotted" />
                     <span className="text-accent font-bold text-sm whitespace-nowrap">{item.price}</span>
                   </div>
-                  <div className="flex justify-between text-white/40 text-sm font-light leading-relaxed group-hover:text-white/70 transition-colors">
-                    <p>{item.name.split(' | ')[1] || item.desc}</p>
+                  <div className="flex justify-end text-white/40 text-sm font-light leading-relaxed transition-colors">
                     {item.duration && <span className="text-[10px] uppercase tracking-widest">{item.duration}</span>}
                   </div>
                 </Link>
@@ -683,10 +697,10 @@ const BookingPage = () => {
                 <select name="ritual" defaultValue={preselectedService} className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:outline-none focus:border-accent transition-colors appearance-none">
                   <option value="Select Service" disabled className="bg-primary">Select Service</option>
                   {MENU_DATA.map((group, idx) => (
-                    <optgroup key={idx} label={group.category} className="bg-primary">
+                    <optgroup key={idx} label={`${group.categoryEn} | ${group.categoryAr}`} className="bg-primary">
                       {group.items.map((item, i) => (
-                        <option key={i} value={item.name} className="bg-primary">
-                          {item.name}
+                        <option key={i} value={item.en} className="bg-primary">
+                          {item.en} | {item.ar}
                         </option>
                       ))}
                     </optgroup>
