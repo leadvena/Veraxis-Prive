@@ -1,0 +1,8 @@
+{
+  "name": "Power On Men's Spa",
+  "description": "Power On Men’s Spa is a premium sanctuary in Abu Dhabi, specializing in deep tissue recovery, structural therapy, and high-end grooming for the modern gentleman on Electra Street.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
