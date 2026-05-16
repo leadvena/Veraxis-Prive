@@ -319,38 +319,45 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex overflow-x-auto no-scrollbar pb-20 px-6 md:px-12 gap-8 md:gap-16">
-          {services.map((service, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
-              className="flex-shrink-0 w-[300px] md:w-[450px] group cursor-pointer"
-            >
-              <Link to="/booking" state={{ service: service.title }} className="block">
-                <div className="aspect-[3/4] rounded-[30px] overflow-hidden mb-8 relative">
-                  <div className="absolute inset-0 bg-primary/40 group-hover:bg-primary/0 transition-all duration-700 z-10" />
-                  <img 
-                    src={service.img} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
-                    alt={service.title} 
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 z-20 translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="w-12 h-12 rounded-full bg-accent/90 backdrop-blur-md flex items-center justify-center text-primary mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      {service.icon}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="flex overflow-hidden pb-20 group/marquee"
+        >
+          <motion.div 
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
+            className="flex gap-8 md:gap-16 w-max px-6 md:px-12"
+          >
+            {[...services, ...services].map((service, i) => (
+              <div 
+                key={i}
+                className="flex-shrink-0 w-[300px] md:w-[450px] group cursor-pointer"
+              >
+                <Link to="/booking" state={{ service: service.title }} className="block">
+                  <div className="aspect-[3/4] rounded-[30px] overflow-hidden mb-8 relative">
+                    <div className="absolute inset-0 bg-primary/40 group-hover:bg-primary/0 transition-all duration-700 z-10" />
+                    <img 
+                      src={service.img} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2s]" 
+                      alt={service.title} 
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-8 z-20 translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
+                      <div className="w-12 h-12 rounded-full bg-accent/90 backdrop-blur-md flex items-center justify-center text-primary mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        {service.icon}
+                      </div>
+                      <h3 className="text-3xl font-serif text-white mb-2">{service.title}</h3>
+                      <p className="text-white/60 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        {service.desc}
+                      </p>
                     </div>
-                    <h3 className="text-3xl font-serif text-white mb-2">{service.title}</h3>
-                    <p className="text-white/60 text-sm font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      {service.desc}
-                    </p>
                   </div>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
+                </Link>
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* CTA Section */}
@@ -416,6 +423,86 @@ const Home = () => {
   );
 };
 
+const MENU_DATA = [
+  {
+    category: "PRESTIGE GROOMING LOUNGE",
+    items: [
+      { name: "Shaving | حلاقة لحية", duration: "15–20 min", price: "50 AED", desc: "Where Style Meets Excellence." },
+      { name: "Hair Cut | حلاقة شعر", duration: "20–30 min", price: "50 AED", desc: "Precision cut tailored to your style." },
+      { name: "Hair Styling | تسريحة للشعر", duration: "15–25 min", price: "50 AED", desc: "Expert styling for a refined look." },
+      { name: "Eyebrow Grooming | ترتيب الحواجب", duration: "10–15 min", price: "50 AED", desc: "Meticulous trimming and shaping." },
+      { name: "Cover Baldness with Styling | تغطية الصلع وترتيب الشعر", duration: "20–30 min", price: "75 AED", desc: "Specialized styling techniques." },
+      { name: "Hair Hanna | حنة للشعر", duration: "45–60 min", price: "75 AED", desc: "Natural hair coloring and treatment." },
+      { name: "Hot Oil | حمام زيت ساخن", duration: "30–40 min", price: "75 AED", desc: "Deep nourishment for hair health." },
+      { name: "Beard Hanna | حنة للحية", duration: "30–45 min", price: "75 AED", desc: "Natural beard coloring and care." },
+      { name: "Wax | واكس", duration: "10–20 min", price: "20–120 AED", desc: "Targeted facial waxing." },
+      { name: "Hair Botox | بوتكس شعر", duration: "60–90 min", price: "300 AED", desc: "Deep restorative treatment for hair revitalization." },
+      { name: "Keratin Hair Treatment | علاج كيراتين للشعر", duration: "90–120 min", price: "700 AED", desc: "Advanced smoothing for hair health and control." }
+    ]
+  },
+  {
+    category: "PRECISION HAIR REMOVAL & WAXING",
+    items: [
+      { name: "Under Arm | إزالة شعر الإبطين", duration: "10–15 min", price: "50 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Shoulder | الكتفين", duration: "10–20 min", price: "50 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Half Arm | نصف الذراعين", duration: "15–25 min", price: "50 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Full Arm | كامل الذراعين", duration: "25–40 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Half Legs | نصف الساقين", duration: "20–35 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Chest and Stomach | الصدر والبطن", duration: "20–40 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Full Back & Shoulder | كامل الظهر والكتفين", duration: "30–50 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Bikini | بيكيني", duration: "15–25 min", price: "100 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Full Legs | كامل الساقين", duration: "40–60 min", price: "200 AED", desc: "Expert Care • Smooth Results" },
+      { name: "Full Body | الجسم كامل", duration: "90–120 min", price: "400 AED", desc: "Expert Care • Smooth Results" }
+    ]
+  },
+  {
+    category: "VÉRAXIS PRIVÉ FACIAL COLLECTION",
+    items: [
+      { name: "Express Executive Facial | فيشل سريع للعملاء المشغولين", duration: "", price: "199 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
+      { name: "Royal Glow Facial | تنظيف عميق + توهج فوري", duration: "", price: "299 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
+      { name: "Aqua Luxe Hydration Ritual | ترطيب مكثف + علاج تحجيم البشرة", duration: "", price: "399 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
+      { name: "Bright Aura Skin Ritual | تفتيح + تصحيح التصبغات", duration: "", price: "449 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
+      { name: "Age Reverse Therapy | شد + مكافحة الشيخوخة + مساج رفع", duration: "", price: "599 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
+      { name: "24K Gold Signature Facial | علاج توهج فاخر بالذهب", duration: "", price: "799 AED", desc: "Refresh Your Skin, Reveal Your Glow" },
+      { name: "Platinum Skin Renewal | تجديد متقدم + منتجات فاخرة", duration: "", price: "999 AED", desc: "Refresh Your Skin, Reveal Your Glow" }
+    ]
+  },
+  {
+    category: "LUXURY HAND & FOOT CARE RITUAL",
+    items: [
+      { name: "Manicure | تقليم أظافر اليدين", duration: "30–45 min", price: "70 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
+      { name: "Pedicure | تقليم أظافر القدمين", duration: "40–60 min", price: "70 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
+      { name: "Foot Spa | تنظيف القدمين", duration: "20–30 min", price: "70 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
+      { name: "Manicure & Hand Care Ritual | تقليم أظافر ومساج اليدين", duration: "45–60 min", price: "100 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
+      { name: "Pedicure & Foot Care Ritual | تقليم أظافر ومساج القدمين", duration: "60–75 min", price: "100 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" },
+      { name: "Foot Spa & Massage | تنظيف ومساج القدم", duration: "40–50 min", price: "100 AED", desc: "Soft Touch • Smooth Finish • Perfect Grooming" }
+    ]
+  },
+  {
+    category: "OASIS BATH & SCRUB LOUNGE",
+    items: [
+      { name: "Whitening Scrub | سكراب تبييض", duration: "45–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
+      { name: "Slimming Scrub | اسكرب تخسيس", duration: "45–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
+      { name: "Regular / Traditional Bath | الحمام التقليدي", duration: "40–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
+      { name: "Detox Scrub (Lymphatic Drainage) | سكراب ديتوكس", duration: "45–60 min", price: "200 AED", desc: "Indulge in Pure Relaxation" },
+      { name: "Veraxis Premium Majestic Bath | حمام ذا ون الخاص", duration: "75–90 min", price: "300 AED", desc: "Indulge in Pure Relaxation" },
+      { name: "Emirati Bath | الحمام الإماراتي", duration: "15–25 min", price: "350 AED", desc: "Indulge in Pure Relaxation" },
+      { name: "Bath with Musk | حمام المسك", duration: "45–60 min", price: "450 AED", desc: "Indulge in Pure Relaxation" },
+      { name: "Bath with Oud | حمام العود", duration: "45–60 min", price: "550 AED", desc: "Indulge in Pure Relaxation" }
+    ]
+  },
+  {
+    category: "VÉRAXIS PRIVÉ MEN'S WELLNESS LOUNGE",
+    items: [
+      { name: "Swedish Personal Care Ritual | ريلاكس سويدي", duration: "60 / 90 MIN", price: "200 / 300 AED", desc: "Where Personal Care Becomes a Ritual" },
+      { name: "Aroma Personal Care Ritual | ريلاكس بالزيوت العطرية", duration: "60 / 90 MIN", price: "200 / 300 AED", desc: "Where Personal Care Becomes a Ritual" },
+      { name: "Deep Relax Personal Care Ritual | ريلاكس عميق", duration: "60 / 90 MIN", price: "250 / 350 AED", desc: "Where Personal Care Becomes a Ritual" },
+      { name: "Stretch Personal Care Ritual | ريلاكس تمدد", duration: "60 / 90 MIN", price: "250 / 350 AED", desc: "Where Personal Care Becomes a Ritual" },
+      { name: "Hot Stone Personal Care Ritual | ريلاكس بالأحجار الساخنة", duration: "60 / 90 MIN", price: "300 / 400 AED", desc: "Where Personal Care Becomes a Ritual" }
+    ]
+  }
+];
+
 const ServicesPage = () => (
   <div className="bg-primary min-h-screen pt-48 pb-40 px-6">
     <div className="max-w-7xl mx-auto">
@@ -425,43 +512,7 @@ const ServicesPage = () => (
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-40">
-        {[
-          { 
-            category: "Grooming & Barbering", 
-            items: [
-              { name: "Precision Haircut", price: "From 150 AED", desc: "Expert cut and styling tailored to your face shape." },
-              { name: "Beard Sculpture", price: "From 80 AED", desc: "Meticulous trimming and shaping with hot towel finish." },
-              { name: "Keratin Treatment", price: "From 350 AED", desc: "Advanced smoothing for hair health and control." },
-              { name: "Hair Botox", price: "From 450 AED", desc: "Deep restorative treatment for hair revitalization." }
-            ] 
-          },
-          { 
-            category: "Spa & Body Therapy", 
-            items: [
-              { name: "Oriental Oud Bath", price: "250 AED", desc: "Traditional immersion with premium oud extracts." },
-              { name: "Emirati Steam Bath", price: "200 AED", desc: "Classic steam ritual for deep detoxification." },
-              { name: "Thai Body Therapy", price: "350 AED", desc: "Signature deep tissue and stretching sequence." },
-              { name: "Swedish Massage", price: "300 AED", desc: "Fluid rhythmic strokes for nervous system relief." }
-            ] 
-          },
-          { 
-            category: "Skincare & Esthetics", 
-            items: [
-              { name: "Signature Facial", price: "350 AED", desc: "Bespoke facial treatment focusing on deep cleansing." },
-              { name: "Men's Manicure", price: "120 AED", desc: "Complete hand and nail care for a professional look." },
-              { name: "Men's Pedicure", price: "150 AED", desc: "Intensive foot therapy and grooming." },
-              { name: "Eye Revival", price: "100 AED", desc: "Targeted treatment to reduce fatigue and puffiness." }
-            ] 
-          },
-          { 
-            category: "Privé Packages", 
-            items: [
-              { name: "The Gentleman's Day", price: "850 AED", desc: "Haircut, Beard, Oud Bath, and 60m Thai Therapy." },
-              { name: "Restoration Ritual", price: "650 AED", desc: "Signature Facial, Manicure, and Swedish Massage." },
-              { name: "Grooming Essentials", price: "200 AED", desc: "Haircut and Beard Sculpture combo." }
-            ] 
-          }
-        ].map((group, idx) => (
+        {MENU_DATA.map((group, idx) => (
           <div key={idx} className="space-y-12">
             <h2 className="text-accent text-[11px] uppercase tracking-[0.6em] font-black border-b border-white/10 pb-4">{group.category}</h2>
             <div className="space-y-10">
@@ -473,14 +524,17 @@ const ServicesPage = () => (
                   className="group block cursor-pointer"
                 >
                   <div className="flex justify-between items-baseline mb-4">
-                    <h3 className="text-2xl md:text-3xl text-white font-serif group-hover:text-accent transition-colors flex items-center gap-3">
-                      {item.name}
-                      <ArrowRight className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
+                    <h3 className="text-xl md:text-2xl text-white font-serif group-hover:text-accent transition-colors flex items-center gap-3">
+                      {item.name.split(' | ')[0]}
+                      <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-accent" />
                     </h3>
                     <div className="flex-grow mx-6 border-b border-white/5 border-dotted" />
-                    <span className="text-accent font-bold text-sm">{item.price}</span>
+                    <span className="text-accent font-bold text-sm whitespace-nowrap">{item.price}</span>
                   </div>
-                  <p className="text-white/40 text-sm font-light leading-relaxed group-hover:text-white/70 transition-colors">{item.desc}</p>
+                  <div className="flex justify-between text-white/40 text-sm font-light leading-relaxed group-hover:text-white/70 transition-colors">
+                    <p>{item.name.split(' | ')[1] || item.desc}</p>
+                    {item.duration && <span className="text-[10px] uppercase tracking-widest">{item.duration}</span>}
+                  </div>
                 </Link>
               ))}
             </div>
@@ -628,29 +682,15 @@ const BookingPage = () => {
                 <label className="text-[10px] uppercase tracking-[0.4em] text-accent font-black">Ritual</label>
                 <select name="ritual" defaultValue={preselectedService} className="w-full bg-transparent border-b border-white/20 py-4 text-white focus:outline-none focus:border-accent transition-colors appearance-none">
                   <option value="Select Service" disabled className="bg-primary">Select Service</option>
-                  <optgroup label="Grooming & Barbering" className="bg-primary">
-                    <option value="Precision Haircut">Precision Haircut</option>
-                    <option value="Beard Sculpture">Beard Sculpture</option>
-                    <option value="Keratin Treatment">Keratin Treatment</option>
-                    <option value="Hair Botox">Hair Botox</option>
-                  </optgroup>
-                  <optgroup label="Spa & Body Therapy" className="bg-primary">
-                    <option value="Oriental Oud Bath">Oriental Oud Bath</option>
-                    <option value="Emirati Steam Bath">Emirati Steam Bath</option>
-                    <option value="Thai Body Therapy">Thai Body Therapy</option>
-                    <option value="Swedish Massage">Swedish Massage</option>
-                  </optgroup>
-                  <optgroup label="Skincare & Esthetics" className="bg-primary">
-                    <option value="Signature Facial">Signature Facial</option>
-                    <option value="Men's Manicure">Men's Manicure</option>
-                    <option value="Men's Pedicure">Men's Pedicure</option>
-                    <option value="Eye Revival">Eye Revival</option>
-                  </optgroup>
-                  <optgroup label="Privé Packages" className="bg-primary">
-                    <option value="The Gentleman's Day">The Gentleman's Day</option>
-                    <option value="Restoration Ritual">Restoration Ritual</option>
-                    <option value="Grooming Essentials">Grooming Essentials</option>
-                  </optgroup>
+                  {MENU_DATA.map((group, idx) => (
+                    <optgroup key={idx} label={group.category} className="bg-primary">
+                      {group.items.map((item, i) => (
+                        <option key={i} value={item.name} className="bg-primary">
+                          {item.name}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
                 </select>
               </div>
             </div>
