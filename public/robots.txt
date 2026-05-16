@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://poweronspa.ae/sitemap.xml

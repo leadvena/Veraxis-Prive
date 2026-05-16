@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-serif: "Playfair Display", serif;
-  --font-sans: "Montserrat", sans-serif;
-  --color-spa-charcoal: #1A1A1A;
-  --color-spa-cream: #F9F6F0;
-  --color-spa-gold: #C5A059;
-  --color-spa-gold-muted: #D4B982;
-  --shadow-soft: 0 10px 30px -10px rgba(26, 26, 26, 0.05);
+  --font-sans: "Inter", sans-serif;
+  --color-primary: #1C1917;
+  --color-secondary: #44403C;
+  --color-accent: #CA8A04;
+  --color-background: #FAFAF9;
+  --color-text: #0C0A09;
+  --shadow-soft: 0 10px 30px -10px rgba(28, 25, 23, 0.1);
 }
 
 @layer base {
   body {
-    @apply bg-spa-cream text-spa-charcoal font-sans antialiased;
+    @apply bg-background text-text font-sans antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
@@ -35,5 +36,11 @@
 ::-webkit-scrollbar-thumb {
   background: #C5A059;
   border-radius: 3px;
+}.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
