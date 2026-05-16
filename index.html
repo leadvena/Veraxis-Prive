@@ -20,24 +20,105 @@
     <meta property="twitter:description" content="Abu Dhabi's exclusive sanctuary for the modern gentleman. Precision grooming and restorative spa treatments." />
     <meta property="twitter:image" content="https://picsum.photos/seed/veraxis-og/1200/630" />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- SEO & AIO Meta Tags -->
+    <meta name="keywords" content="Luxury Men's Spa Abu Dhabi, Men's Salon Al Zahiyah, Men's Haircut Abu Dhabi, Oriental Bath, Best Barber Abu Dhabi, Keratin Treatment Men, Facial Men Abu Dhabi, Veraxis Privé" />
+    <meta name="author" content="Veraxis Privé" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Advanced Structured Data (JSON-LD) for AIO -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HealthAndBeautyBusiness",
-      "name": "Veraxis Privé — Men's Spa & Salon",
-      "image": "https://picsum.photos/seed/veraxis-hero/1920/1080",
-      "description": "Exclusive luxury men's spa and grooming destination in Abu Dhabi.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Hadbat Bin Al Kharsan St, Al Zahiyah",
-        "addressLocality": "Abu Dhabi",
-        "addressCountry": "UAE"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "HealthAndBeautyBusiness",
+        "@id": "https://veraxisprive.ae/#business",
+        "name": "Veraxis Privé — Men's Spa & Salon",
+        "url": "https://veraxisprive.ae/",
+        "logo": "https://veraxisprive.ae/images/veraxis-logo.png",
+        "image": [
+          "https://picsum.photos/seed/veraxis-hero/1920/1080",
+          "https://picsum.photos/seed/veraxis-bath/1920/1080"
+        ],
+        "description": "Veraxis Privé is Abu Dhabi's exclusive luxury men's spa and grooming destination. Located in Al Zahiyah, we offer precision barbering, Oriental oud and Emirati baths, Swedish and Thai body therapy, and signature facials.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hadbat Bin Al Kharsan St, Al Zahiyah, E14",
+          "addressLocality": "Abu Dhabi",
+          "addressCountry": "AE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "24.4936",
+          "longitude": "54.3823"
+        },
+        "telephone": "+971558833672",
+        "priceRange": "50 AED - 999 AED",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "10:00",
+          "closes": "22:00"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "150",
+          "bestRating": "5"
+        },
+        "sameAs": [
+          "https://www.facebook.com/VeraxisPrive"
+        ],
+        "department": [
+          {
+            "@type": "Spa",
+            "name": "Veraxis Privé Spa & Wellness Lounge",
+            "description": "Premium massage and Oriental bath rituals for men."
+          },
+          {
+            "@type": "HairSalon",
+            "name": "Prestige Grooming Lounge",
+            "description": "Luxury precision barbering, styling, and hair treatments."
+          }
+        ]
       },
-      "telephone": "+971 55 883 3672",
-      "priceRange": "$$$",
-      "openingHours": "Mo-Su 10:00-22:00"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://veraxisprive.ae/#website",
+        "url": "https://veraxisprive.ae/",
+        "name": "Veraxis Privé"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where is Veraxis Privé located in Abu Dhabi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Veraxis Privé is located at Hadbat Bin Al Kharsan St, Al Zahiyah, E14, Abu Dhabi, United Arab Emirates."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the opening hours of Veraxis Privé?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We are open daily from 10:00 AM to 10:00 PM."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What luxury men's services do you offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We offer precision barbering, keratin and hair botox, traditional Emirati and Oriental Oud baths, Swedish and Thai massages, signature facials, and luxury hand & foot care."
+            }
+          }
+        ]
+      }
+    ]
     </script>
   </head>
   <body>
